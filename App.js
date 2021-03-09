@@ -1,21 +1,28 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from "react";
+import { StyleSheet } from "react-native";
+import { createStore } from "redux";;
+import { Provider } from "react-redux";
+import ConvertApp from './ConvertApp.js'
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+const initialState = {
+  inch: 0,
+};
+const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case "CONVERT":
+      return { inch: centi * centitoinch };
+  }
+  return state;
+};
+
+const store = createStore(reducer);
+
+class App extends Component {
+  render() {
+    return (
+        <ConvertApp />
+    );
+  }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
