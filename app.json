@@ -1,0 +1,12 @@
+{
+  "name": "tugasRedux",
+  "displayName": "tugasRedux",
+  "expo": {
+    "name": "tugasRedux",
+    "slug": "tugasRedux",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
